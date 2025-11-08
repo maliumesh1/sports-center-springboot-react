@@ -1,0 +1,31 @@
+package com.Digital.Commerce.System.Shopping.entity;
+
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.util.List;
+
+
+@Entity
+@Table(name="Type")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+public class Type {
+
+    @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @Column(name="Id")
+    private Integer id;
+
+    @Column(name="Name")
+    private String Name;
+
+    @OneToMany(mappedBy ="type" , fetch = FetchType.LAZY)
+    private List<Product> products;
+}
+

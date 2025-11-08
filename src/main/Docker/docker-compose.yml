@@ -6,7 +6,7 @@ services:
     restart: always
     container_name: "sports-center-mysql"
     environment:
-      MYSQL_ROOT_PASSWORD: '4545'
+      MYSQL_ROOT_PASSWORD: 'XXX'
     ports:
       - "3306:3306"
     volumes:
